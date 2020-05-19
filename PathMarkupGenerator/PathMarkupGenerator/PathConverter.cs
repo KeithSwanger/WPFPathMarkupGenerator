@@ -22,7 +22,7 @@ namespace PathMarkupGenerator
             {
                 string d = parsedData[i];
 
-                if (d == "M" || d == "m" || d == "L" || d == "l" || d == "C" || d == "c" || d == "Q" || d == "q" || d == "S" || d == "s")
+                if (d == "M" || d == "m" || d == "L" || d == "l" || d == "C" || d == "c" || d == "Q" || d == "q" || d == "S" || d == "s" || d == "T" || d == "t")
                 {
                     finalProcessedData.Add(d);
 
@@ -112,6 +112,9 @@ namespace PathMarkupGenerator
                     j++;
 
                     // End Point
+                    splitPos = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    pos = new Vector2(float.Parse(splitPos[0]), float.Parse(splitPos[1]));
+
                     if (char.IsLower(d[0]))
                     {
                         pos.x += lastPosition.x;

@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.Diagnostics;
+using PathShapeGenerator;
 
 namespace PathMarkupGenerator
 {
@@ -129,7 +130,7 @@ namespace PathMarkupGenerator
                 _inputData = value;
                 OnPropertyChanged();
 
-                if(value != SelectedPreset?.PathData)
+                if (value != SelectedPreset?.PathData)
                 {
                     SelectedPreset = null;
                 }
@@ -173,6 +174,31 @@ namespace PathMarkupGenerator
         private void Button_Click_Generate(object sender, RoutedEventArgs e)
         {
             GenerateOutput();
+        }
+        private void Button_Click_Preview(object sender, RoutedEventArgs e)
+        {
+            if (Int32.TryParse(ReferenceWidth, out int refW) && Int32.TryParse(ReferenceHeight, out int refH) && Int32.TryParse(TargetWidth, out int tarW) && Int32.TryParse(TargetHeight, out int tarH))
+            {
+                ShowPreview();
+            }
+        }
+
+        private void ShowPreview()
+        {
+            PreviewWindow preview = new PreviewWindow();
+            preview.Owner = this;
+
+
+            preview.PathPreviewBefore.Width = Int32.Parse(ReferenceWidth);
+            preview.PathPreviewBefore.Height = Int32.Parse(ReferenceHeight);
+            preview.PathPreviewBefore.Data = Geometry.Parse(InputData);
+
+            preview.PathPreviewAfter.Width = Int32.Parse(TargetWidth);
+            preview.PathPreviewAfter.Height = Int32.Parse(TargetHeight);
+            preview.PathPreviewAfter.Data = Geometry.Parse(OutputData);
+
+            preview.SizeToContent = SizeToContent.WidthAndHeight;
+            preview.Show();
         }
     }
 }
