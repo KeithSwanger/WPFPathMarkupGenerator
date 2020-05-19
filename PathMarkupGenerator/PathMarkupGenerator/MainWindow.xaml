@@ -1,0 +1,65 @@
+﻿<Window x:Class="PathMarkupGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PathMarkupGenerator"
+        mc:Ignorable="d"
+        Title="Path Markup Generator" Height="550" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        FontSize="16">
+    
+    <Border Background="Gray">
+
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Path Input" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock Text="Presets"/>
+                    <ComboBox ItemsSource="{Binding Presets}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedPreset, Mode=TwoWay}"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,3">
+                        <TextBlock Text="Input Width: " VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding ReferenceWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="Input Height: " VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding ReferenceHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Grid.Row="2" Text="Path Data Input" FontWeight="Bold"/>
+                <TextBox Grid.Row="3" Text="{Binding InputData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,3" Padding="5" TextWrapping="Wrap" AcceptsReturn="False" VerticalScrollBarVisibility="Auto"/>
+                <StackPanel Grid.Row="4">
+                    <StackPanel Orientation="Horizontal" Margin="0,3">
+                        <TextBlock Text="Target Width: " VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding TargetWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="Target Height: " VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding TargetHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <Button Click="Button_Click_Generate" Content="Generate" FontWeight="Bold" Width="310" HorizontalAlignment="Left"/>
+                    <Border Height="1" Background="#444444" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Path Output" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                <!--<TextBlock Grid.Row="2" Text="Path Data Output" FontWeight="Bold"/>-->
+                <TextBox Grid.Row="1" Text="{Binding OutputData, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Margin="0,3" Padding="5" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
