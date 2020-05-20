@@ -31,10 +31,17 @@ namespace PathMarkupGenerator
                 },
                 new ShapePreset()
                 {
-                    Name = "Cicle",
+                    Name = "Circle",
                     ReferenceWidth = 100,
                     ReferenceHeight = 100,
                     PathData = "M 0,50 A 50,50 0 1 1 100,50 M 0,50 A 50,50 0 1 0 100,50 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Hollow Circle 1%",
+                    ReferenceWidth = 100,
+                    ReferenceHeight = 100,
+                    PathData = "M 0,50 A 50,50 0 1 1 100,50 M 0,50 A 50,50 0 1 0 100,50 Z M 1,50 A 49,49 0 1 1 99,50 M 1,50 A 49,49 0 1 0 99,50 Z"
                 },
                 new ShapePreset()
                 {
