@@ -147,7 +147,8 @@ namespace PathMarkupGenerator
                 }
             }
 
-            return resizedPathData;
+            // TODO: Add relative output support, right now relative inputs only work as absolute outputs
+            return resizedPathData.ToUpper();
         }
 
         static string[] ParseString(string data)
