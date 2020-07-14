@@ -84,11 +84,25 @@ namespace PathMarkupGenerator
                     ReferenceWidth = 112,
                     ReferenceHeight = 112,
                     PathData = "M 0,0 V 112 L 88,56 L 0,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Material Design Plus Circular",
+                    ReferenceWidth = 100,
+                    ReferenceHeight = 100,
+                    PathData = "M 75,55 H 55 V 75 H 45 V 55 H 25 V 45 H 45 V 25 H 55 V 45 H 75 M 50,0 A 50,50 0 0 0 0,50 A 50,50 0 0 0 50,100 A 50,50 0 0 0 100,50 A 50,50 0 0 0 50,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Material Design Plus Rounded Box",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 112,80 H 80 V 112 H 64 V 80 H 32 V 64 H 64 V 32 H 80 V 64 H 112 M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
                 }
 
 
 
-                
+
 
             };
 
