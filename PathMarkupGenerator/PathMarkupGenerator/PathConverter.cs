@@ -153,7 +153,37 @@ namespace PathMarkupGenerator
 
         static string[] ParseString(string data)
         {
-            return data.Split(new char[1] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            // Add space buffers for each path markup character if there is none so the data can be parsed correctly.
+            string dataWithAddedSpaces = "";
+            for (int i = 0; i < data.Length; i++)
+            {
+                if (Char.IsLetter(data[i]))
+                {
+                    if (i > 0)
+                    {
+                        if (!Char.IsWhiteSpace(data[i - 1]))
+                        {
+                            dataWithAddedSpaces += " ";
+                        }
+                    }
+
+                    dataWithAddedSpaces += data[i];
+
+                    if(i < data.Length - 1)
+                    {
+                        if(!char.IsWhiteSpace(data[i + 1]))
+                        {
+                            dataWithAddedSpaces += " ";
+                        }
+                    }
+                }
+                else
+                {
+                    dataWithAddedSpaces += data[i];
+                }
+            }
+
+            return dataWithAddedSpaces.Split(new char[1] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
 
