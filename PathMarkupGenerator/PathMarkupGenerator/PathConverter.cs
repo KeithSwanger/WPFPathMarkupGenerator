@@ -12,12 +12,12 @@ namespace PathMarkupGenerator
     {
 
 
-        public static string ResizePathData(float refW, float refH, float targetW, float targetH, string data)
+        public static string ResizePathData(float refW, float refH, float inputOffsetW, float inputOffsetH, float targetW, float targetH, float outputOffsetW, float outputOffsetH, string data)
         {
             string[] parsedData = ParseString(data);
             List<string> finalProcessedData = new List<string>();
 
-            Vector2 lastPosition = new Vector2(0f, 0f);
+            Vector2 lastPosition = new Vector2(0f + inputOffsetW, 0f + inputOffsetH);
             for (int i = 0; i < parsedData.Length; i++)
             {
                 string d = parsedData[i];
@@ -31,7 +31,7 @@ namespace PathMarkupGenerator
                     while (j < parsedData.Length && parsedData[j].Contains(","))
                     {
                         string[] splitPos = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                        Vector2 pos = new Vector2(float.Parse(splitPos[0]), float.Parse(splitPos[1]));
+                        Vector2 pos = new Vector2(float.Parse(splitPos[0]) + inputOffsetW, float.Parse(splitPos[1]) + inputOffsetH);
 
                         // if lower case is used, then this is a relative position, so offset the last position
                         if (char.IsLower(d[0]))
@@ -41,6 +41,8 @@ namespace PathMarkupGenerator
                         }
 
                         Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                        mappedPos.x += outputOffsetW;
+                        mappedPos.y += outputOffsetH;
 
                         finalProcessedData.Add(mappedPos.ToString());
 
@@ -55,13 +57,14 @@ namespace PathMarkupGenerator
 
                     int j = i + 1;
 
-                    Vector2 pos = new Vector2(float.Parse(parsedData[j]), lastPosition.y);
+                    Vector2 pos = new Vector2(float.Parse(parsedData[j]) + inputOffsetW, lastPosition.y);
                     if (char.IsLower(d[0]))
                     {
                         pos.x += lastPosition.x;
                     }
 
                     Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                    mappedPos.x += outputOffsetW;
 
                     finalProcessedData.Add(mappedPos.x.ToString());
 
@@ -73,13 +76,14 @@ namespace PathMarkupGenerator
 
                     int j = i + 1;
 
-                    Vector2 pos = new Vector2(lastPosition.x, float.Parse(parsedData[j]));
+                    Vector2 pos = new Vector2(lastPosition.x, float.Parse(parsedData[j]) + inputOffsetH);
                     if (char.IsLower(d[0]))
                     {
                         pos.y += lastPosition.y;
                     }
 
                     Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                    mappedPos.y += outputOffsetH;
 
                     finalProcessedData.Add(mappedPos.y.ToString());
 
@@ -113,7 +117,7 @@ namespace PathMarkupGenerator
 
                     // End Point
                     splitPos = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    pos = new Vector2(float.Parse(splitPos[0]), float.Parse(splitPos[1]));
+                    pos = new Vector2(float.Parse(splitPos[0]) + inputOffsetW, float.Parse(splitPos[1]) + inputOffsetH);
 
                     if (char.IsLower(d[0]))
                     {
@@ -122,6 +126,8 @@ namespace PathMarkupGenerator
                     }
 
                     mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                    mappedPos.x += outputOffsetW;
+                    mappedPos.y += outputOffsetH;
 
                     finalProcessedData.Add(mappedPos.ToString());
 

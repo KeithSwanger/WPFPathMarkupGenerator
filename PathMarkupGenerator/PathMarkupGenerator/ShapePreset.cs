@@ -13,6 +13,8 @@ namespace PathMarkupGenerator
         public string Name { get; set; }
         public int ReferenceWidth { get; set; }
         public int ReferenceHeight { get; set; }
+        public int WidthOffset { get; set; } = 0;
+        public int HeightOffset { get; set; } = 0;
         public string PathData { get; set; }
     }
 

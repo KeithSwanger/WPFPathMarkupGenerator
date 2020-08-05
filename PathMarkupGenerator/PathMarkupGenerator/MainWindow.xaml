@@ -35,6 +35,10 @@
                         <TextBox Text="{Binding ReferenceWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
                         <TextBlock Text="Input Height: " VerticalAlignment="Center" Margin="10,0,0,0"/>
                         <TextBox Text="{Binding ReferenceHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="Input Width Offset: " VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding WidthOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="Input Height Offset: " VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding HeightOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
                 <TextBlock Grid.Row="2" Text="Path Data Input" FontWeight="Bold"/>
@@ -45,6 +49,10 @@
                         <TextBox Text="{Binding TargetWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
                         <TextBlock Text="Target Height: " VerticalAlignment="Center" Margin="10,0,0,0"/>
                         <TextBox Text="{Binding TargetHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="Output Width Offset: " VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding WidthOutputOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="Output Height Offset: " VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding HeightOutputOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" Padding="3" VerticalContentAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button Click="Button_Click_Generate" Content="Generate" FontWeight="Bold" Width="314" HorizontalAlignment="Left"/>

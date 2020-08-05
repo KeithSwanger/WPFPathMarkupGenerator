@@ -90,6 +90,62 @@ namespace PathMarkupGenerator
             }
         }
 
+        private string _widthOffset = "0";
+        public string WidthOffset
+        {
+            get
+            {
+                return _widthOffset;
+            }
+            set
+            {
+                _widthOffset = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _heightOffset = "0";
+        public string HeightOffset
+        {
+            get
+            {
+                return _heightOffset;
+            }
+            set
+            {
+                _heightOffset = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _widthOutputOffset = "0";
+        public string WidthOutputOffset
+        {
+            get
+            {
+                return _widthOutputOffset;
+            }
+            set
+            {
+                _widthOutputOffset = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _heightOutputOffset = "0";
+        public string HeightOutputOffset
+        {
+            get
+            {
+                return _heightOutputOffset;
+            }
+            set
+            {
+                _heightOutputOffset = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _targetWidth;
         public string TargetWidth
         {
@@ -165,9 +221,9 @@ namespace PathMarkupGenerator
         public void GenerateOutput()
         {
 
-            if (Int32.TryParse(ReferenceWidth, out int refW) && Int32.TryParse(ReferenceHeight, out int refH) && Int32.TryParse(TargetWidth, out int tarW) && Int32.TryParse(TargetHeight, out int tarH))
+            if (Int32.TryParse(ReferenceWidth, out int refW) && Int32.TryParse(ReferenceHeight, out int refH) && Single.TryParse(WidthOffset, out float offW) && Single.TryParse(HeightOffset, out float offH) && Int32.TryParse(TargetWidth, out int tarW) && Int32.TryParse(TargetHeight, out int tarH) && Single.TryParse(WidthOutputOffset, out float outOffW) && Single.TryParse(HeightOutputOffset, out float outOffH))
             {
-                OutputData = PathConverter.ResizePathData(refW, refH, tarW, tarH, InputData);
+                OutputData = PathConverter.ResizePathData(refW, refH, offW, offH, tarW, tarH, outOffW, outOffH, InputData);
             }
         }
 
@@ -177,7 +233,7 @@ namespace PathMarkupGenerator
         }
         private void Button_Click_Preview(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(ReferenceWidth, out int refW) && Int32.TryParse(ReferenceHeight, out int refH) && Int32.TryParse(TargetWidth, out int tarW) && Int32.TryParse(TargetHeight, out int tarH))
+            if (Int32.TryParse(ReferenceWidth, out int refW) && Int32.TryParse(ReferenceHeight, out int refH) && Single.TryParse(WidthOffset, out float offW) && Single.TryParse(HeightOffset, out float offH) && Int32.TryParse(TargetWidth, out int tarW) && Int32.TryParse(TargetHeight, out int tarH) && Single.TryParse(WidthOffset, out float outOffW) && Single.TryParse(HeightOffset, out float outOffH))
             {
                 ShowPreview();
             }
