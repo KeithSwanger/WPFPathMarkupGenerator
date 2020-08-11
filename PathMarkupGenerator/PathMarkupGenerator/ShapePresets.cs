@@ -80,38 +80,80 @@ namespace PathMarkupGenerator
                 },
                 new ShapePreset()
                 {
-                    Name = "Material Design Gear",
+                    Name = "Gear (Material Design)",
                     ReferenceWidth = 24,
                     ReferenceHeight = 24,
                     PathData = "M 12,15.5 A 3.5,3.5 0 0 1 8.5,12 A 3.5,3.5 0 0 1 12,8.5 A 3.5,3.5 0 0 1 15.5,12 A 3.5,3.5 0 0 1 12,15.5 M 19.43,12.97 C 19.47,12.65 19.5,12.33 19.5,12 C 19.5,11.67 19.47,11.34 19.43,11 L 21.54,9.37 C 21.73,9.22 21.78,8.95 21.66,8.73 L 19.66,5.27 C 19.54,5.05 19.27,4.96 19.05,5.05 L 16.56,6.05 C 16.04,5.66 15.5,5.32 14.87,5.07 L 14.5,2.42 C 14.46,2.18 14.25,2 14,2 H 10 C 9.75,2 9.54,2.18 9.5,2.42 L 9.13,5.07 C 8.5,5.32 7.96,5.66 7.44,6.05 L 4.95,5.05 C 4.73,4.96 4.46,5.05 4.34,5.27 L 2.34,8.73 C 2.21,8.95 2.27,9.22 2.46,9.37 L 4.57,11 C 4.53,11.34 4.5,11.67 4.5,12 C 4.5,12.33 4.53,12.65 4.57,12.97 L 2.46,14.63 C 2.27,14.78 2.21,15.05 2.34,15.27 L 4.34,18.73 C 4.46,18.95 4.73,19.03 4.95,18.95 L 7.44,17.94 C 7.96,18.34 8.5,18.68 9.13,18.93 L 9.5,21.58 C 9.54,21.82 9.75,22 10,22 H 14 C 14.25,22 14.46,21.82 14.5,21.58 L 14.87,18.93 C 15.5,18.67 16.04,18.34 16.56,17.94 L 19.05,18.95 C 19.27,19.03 19.54,18.95 19.66,18.73 L 21.66,15.27 C 21.78,15.05 21.73,14.78 21.54,14.63 L 19.43,12.97 Z"
                 },
                 new ShapePreset()
                 {
-                    Name = "Material Design Gear (Small Margin)",
+                    Name = "Gear (Small Margin) (Material Design)",
                     ReferenceWidth = 22,
                     ReferenceHeight = 22,
                     PathData = "M 11,14.5 A 3.5,3.5 0 0 1 7.5,11 A 3.5,3.5 0 0 1 11,7.5 A 3.5,3.5 0 0 1 14.5,11 A 3.5,3.5 0 0 1 11,14.5 M 18.43,11.97 C 18.47,11.65 18.5,11.33 18.5,11 C 18.5,10.67 18.47,10.34 18.43,10 L 20.54,8.37 C 20.73,8.22 20.78,7.95 20.66,7.73 L 18.66,4.27 C 18.54,4.05 18.27,3.96 18.05,4.05 L 15.56,5.05 C 15.04,4.66 14.5,4.32 13.87,4.07 L 13.5,1.42 C 13.46,1.18 13.25,1 13,1 H 9 C 8.75,1 8.54,1.18 8.5,1.42 L 8.13,4.07 C 7.5,4.32 6.96,4.66 6.44,5.05 L 3.95,4.05 C 3.73,3.96 3.46,4.05 3.34,4.27 L 1.34,7.73 C 1.21,7.95 1.27,8.22 1.46,8.37 L 3.57,10 C 3.53,10.34 3.5,10.67 3.5,11 C 3.5,11.33 3.53,11.65 3.57,11.97 L 1.46,13.63 C 1.27,13.78 1.21,14.05 1.34,14.27 L 3.34,17.73 C 3.46,17.95 3.73,18.03 3.95,17.95 L 6.44,16.94 C 6.96,17.34 7.5,17.68 8.13,17.93 L 8.5,20.58 C 8.54,20.82 8.75,21 9,21 H 13 C 13.25,21 13.46,20.82 13.5,20.58 L 13.87,17.93 C 14.5,17.67 15.04,17.34 15.56,16.94 L 18.05,17.95 C 18.27,18.03 18.54,17.95 18.66,17.73 L 20.66,14.27 C 20.78,14.05 20.73,13.78 20.54,13.63 L 18.43,11.97 Z"
                 },
                 new ShapePreset()
                 {
-                    Name = "Material Design Play",
+                    Name = "Minus Circular (Material Design)",
+                    ReferenceWidth = 100,
+                    ReferenceHeight = 100,
+                    PathData = "M 75,55 H 25 V 45 H 75 M 50,0 A 50,50 0 0 0 0,50 A 50,50 0 0 0 50,100 A 50,50 0 0 0 100,50 A 50,50 0 0 0 50,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Minus Rounded Box (Material Design)",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 112,80 H 32 V 64 H 112 M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0"
+                },
+                new ShapePreset()
+                {
+                    Name = "Pencil (Material Design)",
+                    ReferenceWidth = 18,
+                    ReferenceHeight = 18,
+                    PathData = "M 17.71,4.04 C 18.1,3.65 18.1,3 17.71,2.63 L 15.37,0.29 C 15,-0.1 14.35,-0.1 13.96,0.29 L 12.12,2.12 L 15.87,5.87 M 0,14.25 V 18 H 3.75 L 14.81,6.93 L 11.06,3.18 L 0,14.25 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Pencil Rounded Box (Material Design)",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 115.55,47.2 C 117.5,45.25 117.5,42 115.55,40.15 L 103.85,28.45 C 102,26.5 98.75,26.5 96.8,28.45 L 87.6,37.6 L 106.35,56.35 M 27,98.25 V 117 H 45.75 L 101.05,61.65 L 82.3,42.9 L 27,98.25 Z M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0"
+                },
+                new ShapePreset()
+                {
+                    Name = "Play (Material Design)",
                     ReferenceWidth = 112,
                     ReferenceHeight = 112,
                     PathData = "M 0,0 V 112 L 88,56 L 0,0 Z"
                 },
                 new ShapePreset()
                 {
-                    Name = "Material Design Plus Circular",
+                    Name = "Plus Circular (Material Design)",
                     ReferenceWidth = 100,
                     ReferenceHeight = 100,
                     PathData = "M 75,55 H 55 V 75 H 45 V 55 H 25 V 45 H 45 V 25 H 55 V 45 H 75 M 50,0 A 50,50 0 0 0 0,50 A 50,50 0 0 0 50,100 A 50,50 0 0 0 100,50 A 50,50 0 0 0 50,0 Z"
                 },
                 new ShapePreset()
                 {
-                    Name = "Material Design Plus Rounded Box",
+                    Name = "Plus Rounded Box (Material Design)",
                     ReferenceWidth = 144,
                     ReferenceHeight = 144,
                     PathData = "M 112,80 H 80 V 112 H 64 V 80 H 32 V 64 H 64 V 32 H 80 V 64 H 112 M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Trash Can (Material Design)",
+                    ReferenceWidth = 18,
+                    ReferenceHeight = 18,
+                    PathData = "M 16,1 H 12.5 L 11.5,0 H 6.5 L 5.5,1 H 2 V 3 H 16 M 3,16 A 2,2 0 0 0 5,18 H 13 A 2,2 0 0 0 15,16 V 4 H 3 V 16 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Trash Can Rounded Box",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 107,32 H 89.5 L 84.5,27 H 59.5 L 54.5,32 H 37 V 48 H 107 M 42,107 A 10,10 0 0 0 52,117 H 92 A 10,10 0 0 0 102,107 V 60 H 42 V 107 Z M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
                 }
 
 

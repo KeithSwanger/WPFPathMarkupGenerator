@@ -58,7 +58,7 @@
     <Compile Include="PreviewWindow.xaml.cs">
       <DependentUpon>PreviewWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vector2.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="ShapePreset.cs" />
     <Compile Include="ShapePresets.cs" />
     <Page Include="MainWindow.xaml">

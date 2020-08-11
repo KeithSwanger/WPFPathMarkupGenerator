@@ -17,7 +17,7 @@ namespace PathMarkupGenerator
             string[] parsedData = ParseString(data);
             List<string> finalProcessedData = new List<string>();
 
-            Vector2 lastPosition = new Vector2(0f + inputOffsetW, 0f + inputOffsetH);
+            Position lastPosition = new Position(0f + inputOffsetW, 0f + inputOffsetH);
             for (int i = 0; i < parsedData.Length; i++)
             {
                 string d = parsedData[i];
@@ -31,7 +31,7 @@ namespace PathMarkupGenerator
                     while (j < parsedData.Length && parsedData[j].Contains(","))
                     {
                         string[] splitPos = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                        Vector2 pos = new Vector2(float.Parse(splitPos[0]) + inputOffsetW, float.Parse(splitPos[1]) + inputOffsetH);
+                        Position pos = new Position(float.Parse(splitPos[0]) + inputOffsetW, float.Parse(splitPos[1]) + inputOffsetH);
 
                         // if lower case is used, then this is a relative position, so offset the last position
                         if (char.IsLower(d[0]))
@@ -40,7 +40,7 @@ namespace PathMarkupGenerator
                             pos.y += lastPosition.y;
                         }
 
-                        Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                        Position mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
                         mappedPos.x += outputOffsetW;
                         mappedPos.y += outputOffsetH;
 
@@ -57,13 +57,13 @@ namespace PathMarkupGenerator
 
                     int j = i + 1;
 
-                    Vector2 pos = new Vector2(float.Parse(parsedData[j]) + inputOffsetW, lastPosition.y);
+                    Position pos = new Position(float.Parse(parsedData[j]) + inputOffsetW, lastPosition.y);
                     if (char.IsLower(d[0]))
                     {
                         pos.x += lastPosition.x;
                     }
 
-                    Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                    Position mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
                     mappedPos.x += outputOffsetW;
 
                     finalProcessedData.Add(mappedPos.x.ToString());
@@ -76,13 +76,13 @@ namespace PathMarkupGenerator
 
                     int j = i + 1;
 
-                    Vector2 pos = new Vector2(lastPosition.x, float.Parse(parsedData[j]) + inputOffsetH);
+                    Position pos = new Position(lastPosition.x, float.Parse(parsedData[j]) + inputOffsetH);
                     if (char.IsLower(d[0]))
                     {
                         pos.y += lastPosition.y;
                     }
 
-                    Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
+                    Position mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
                     mappedPos.y += outputOffsetH;
 
                     finalProcessedData.Add(mappedPos.y.ToString());
@@ -92,32 +92,44 @@ namespace PathMarkupGenerator
                 else if (d == "A" || d == "a")
                 {
                     finalProcessedData.Add(d);
-                    int j = i + 1;
+                    //int j = i + 1;
+
+                    string[] splitArc = new string[7];
+
+                    // Remove all all commas for better parsing
+                    for(int j = i + 1, k = 0; j < parsedData.Length; j++)
+                    {
+                        if (char.IsLetter(parsedData[j][0]))
+                        {
+                            break; // no more data to be parsed for this arc
+                        }
+
+                        // split at commas and add to the split data
+                        string[] splitString = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                        for(int l = 0; l < splitString.Length; l++)
+                        {
+                            splitArc[k] = splitString[l];
+                            k++;
+                        }
+                    }
 
                     // Size
-                    string[] splitPos = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    Vector2 pos = new Vector2(float.Parse(splitPos[0]), float.Parse(splitPos[1]));
-
-                    Vector2 mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
-
+                    Position pos = new Position(float.Parse(splitArc[0]), float.Parse(splitArc[1]));
+                    Position mappedPos = MapPointToTarget(refW, refH, targetW, targetH, pos);
                     finalProcessedData.Add(mappedPos.ToString());
-                    j++;
 
                     // Rotation Angle
-                    finalProcessedData.Add(parsedData[j]);
-                    j++;
+                    finalProcessedData.Add(splitArc[2]);
 
                     // isLargeArcFlag
-                    finalProcessedData.Add(parsedData[j]);
-                    j++;
+                    finalProcessedData.Add(splitArc[3]);
+
 
                     // sweepDirectionFlag
-                    finalProcessedData.Add(parsedData[j]);
-                    j++;
+                    finalProcessedData.Add(splitArc[4]);
 
                     // End Point
-                    splitPos = parsedData[j].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    pos = new Vector2(float.Parse(splitPos[0]) + inputOffsetW, float.Parse(splitPos[1]) + inputOffsetH);
+                    pos = new Position(float.Parse(splitArc[5]) + inputOffsetW, float.Parse(splitArc[6]) + inputOffsetH);
 
                     if (char.IsLower(d[0]))
                     {
@@ -132,6 +144,7 @@ namespace PathMarkupGenerator
                     finalProcessedData.Add(mappedPos.ToString());
 
                     lastPosition = pos;
+
                 }
                 else if (d == "Z" || d == "z")
                 {
@@ -193,9 +206,9 @@ namespace PathMarkupGenerator
         }
 
 
-        static Vector2 MapPointToTarget(float refW, float refH, float targetW, float targetH, Vector2 positionToMap)
+        static Position MapPointToTarget(float refW, float refH, float targetW, float targetH, Position positionToMap)
         {
-            Vector2 mappedPosition = new Vector2();
+            Position mappedPosition = new Position();
 
             mappedPosition.x = (positionToMap.x / refW) * targetW;
             mappedPosition.y = (positionToMap.y / refH) * targetH;
