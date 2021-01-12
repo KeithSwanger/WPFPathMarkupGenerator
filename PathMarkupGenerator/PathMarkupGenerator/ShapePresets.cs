@@ -196,6 +196,35 @@ namespace PathMarkupGenerator
                     ReferenceWidth = 144,
                     ReferenceHeight = 144,
                     PathData = "M 72,112 A 35,35 0 0 1 37,77 A 35,35 0 0 1 72,42 A 35,35 0 0 1 107,77 A 35,35 0 0 1 72,112 M 107.15,48.95 L 114.25,41.85 C 112,39.3 109.75,37 107.2,34.8 L 100.1,42 C 92.35,35.7 82.6,32 72,32 A 45,45 0 0 0 27,77 A 45,45 0 0 0 72,122 C 97,122 117,101.85 117,77 C 117,66.4 113.3,56.65 107.15,48.95 M 67,82 H 77 V 52 H 67 M 87,17 H 57 V 27 H 87 V 17 Z M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Alert (Material Design)",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 82,82 V 24.5 H 63.25 V 82 H 82 M 82,120.75 V 100.75 H 63.25 V 120.75 H 82 Z"
+
+                },
+                new ShapePreset()
+                {
+                    Name = "Alert Rounded Box",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 82,82 V 24.5 H 63.25 V 82 H 82 M 82,120.75 V 100.75 H 63.25 V 120.75 H 82 Z M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Continue",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 24,84 V 60 H 48 V 40.64 V 84 H 20 Z M 60,84 V 60 H 92 V 40.64 L 123.36,72 L 92,103.36 V 84 H 60 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Continue Rounded Box",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 24,84 V 60 H 48 V 40.64 V 84 H 20 Z M 60,84 V 60 H 92 V 40.64 L 123.36,72 L 92,103.36 V 84 H 60 Z M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
                 }
 
             };
