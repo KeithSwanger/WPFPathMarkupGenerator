@@ -87,6 +87,20 @@ namespace PathMarkupGenerator
                 },
                 new ShapePreset()
                 {
+                    Name = "Close-Thick (Austin Andrews)",
+                    ReferenceWidth = 24,
+                    ReferenceHeight = 24,
+                    PathData = "M 20,6.91 L 17.09,4 L 12,9.09 L 6.91,4 L 4,6.91 L 9.09,12 L 4,17.09 L 6.91,20 L 12,14.91 L 17.09,20 L 20,17.09 L 14.91,12 L 20,6.91 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Dots Horizontal",
+                    ReferenceWidth = 24,
+                    ReferenceHeight = 24,
+                    PathData = "M 16,12 A 2,2 0 0 1 18,10 A 2,2 0 0 1 20,12 A 2,2 0 0 1 18,14 A 2,2 0 0 1 16,12 M 10,12 A 2,2 0 0 1 12,10 A 2,2 0 0 1 14,12 A 2,2 0 0 1 12,14 A 2,2 0 0 1 10,12 M 4,12 A 2,2 0 0 1 6,10 A 2,2 0 0 1 8,12 A 2,2 0 0 1 6,14 A 2,2 0 0 1 4,12 Z"
+                },
+                new ShapePreset()
+                {
                     Name = "Gear (Material Design)",
                     ReferenceWidth = 24,
                     ReferenceHeight = 24,
@@ -133,6 +147,13 @@ namespace PathMarkupGenerator
                     ReferenceWidth = 112,
                     ReferenceHeight = 112,
                     PathData = "M 0,0 V 112 L 88,56 L 0,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Pause (Material Design)",
+                    ReferenceWidth = 112,
+                    ReferenceHeight = 112,
+                    PathData = "M 72,112 H 104 V 0 H 72 M 8,112 H 40 V 0 H 8 V 112 Z"
                 },
                 new ShapePreset()
                 {
@@ -225,6 +246,21 @@ namespace PathMarkupGenerator
                     ReferenceWidth = 144,
                     ReferenceHeight = 144,
                     PathData = "M 24,84 V 60 H 48 V 40.64 V 84 H 20 Z M 60,84 V 60 H 92 V 40.64 L 123.36,72 L 92,103.36 V 84 H 60 Z M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z"
+                },
+                new ShapePreset()
+                {
+                    Name = "Hourglass (Material Design)",
+                    ReferenceWidth = 100,
+                    ReferenceHeight = 100,
+                    PathData = "M 21,1 V 31 H 21 V 31 L 41,51 L 21,71 V 71 H 21 V 101 H 81 V 71 H 81 V 71 L 61,51 L 81,31 V 31 H 81 V 1 H 21 M 71,73.5 V 91 H 31 V 73.5 L 51,53.5 L 71,73.5 M 51,48.5 L 31,28.5 V 11 H 71 V 28.5 L 51,48.5 Z"
+                }
+                ,
+                new ShapePreset()
+                {
+                    Name = "Hourglass Rounded Box",
+                    ReferenceWidth = 144,
+                    ReferenceHeight = 144,
+                    PathData = "M 128,0 H 16 C 7.12,0 0,7.12 0,16 V 128 A 16,16 0 0 0 16,144 H 128 A 16,16 0 0 0 144,128 V 16 C 144,7.12 136.8,0 128,0 Z M 39.52,17.12 V 50.72 H 39.52 V 50.72 L 61.92,73.12 L 39.52,95.52 V 95.52 H 39.52 V 129.12 H 106.72 V 95.52 H 106.72 V 95.52 L 84.32,73.12 L 106.72,50.72 V 50.72 H 106.72 V 17.12 H 39.52 M 95.52,98.32 V 117.92 H 50.72 V 98.32 L 73.12,75.92 L 95.52,98.32 M 73.12,70.32 L 50.72,47.92 V 28.32 H 95.52 V 47.92 L 73.12,70.32 Z"
                 }
 
             };
