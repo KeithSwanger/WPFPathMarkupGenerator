@@ -94,6 +94,13 @@ namespace PathMarkupGenerator
                 },
                 new ShapePreset()
                 {
+                    Name = "Right Arrow No Tail",
+                    ReferenceWidth = 24,
+                    ReferenceHeight = 24,
+                    PathData = "M 15.2,12 L 9.5,17.5 L 11.92,19.92 L 19.84,12 L 11.92,4.08 L 9.5,6.5 L 15.2,12 H 4 Z"
+                },
+                new ShapePreset()
+                {
                     Name = "Dots Horizontal",
                     ReferenceWidth = 24,
                     ReferenceHeight = 24,
