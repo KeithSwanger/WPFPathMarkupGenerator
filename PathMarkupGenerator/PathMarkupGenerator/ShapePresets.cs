@@ -227,6 +227,13 @@ namespace PathMarkupGenerator
                 },
                 new ShapePreset()
                 {
+                    Name = "Alert Sharp (Material Design)",
+                    ReferenceWidth = 100,
+                    ReferenceHeight = 100,
+                    PathData = "M 1,70.3 L 9.4,50 L 1,29.7 L 21.3,21.3 L 29.7,1 L 50,9.4 L 70.3,1 L 78.7,21.3 L 99,29.7 L 90.6,50 L 99,70.3 L 78.7,78.7 L 70.3,99 L 50,90.6 L 29.7,99 L 21.3,78.7 L 1,70.3 M 55,75 V 65 H 45 V 75 H 55 M 55,55 V 25 H 45 V 55 H 55 Z"
+                },
+                new ShapePreset()
+                {
                     Name = "Alert (Material Design)",
                     ReferenceWidth = 144,
                     ReferenceHeight = 144,
