@@ -133,7 +133,7 @@ namespace PathMarkupGenerator
             }
         }
 
-        private string _targetWidth;
+        private string _targetWidth = "100";
         public string TargetWidth
         {
             get
@@ -147,7 +147,7 @@ namespace PathMarkupGenerator
             }
         }
 
-        private string _targetHeight;
+        private string _targetHeight = "100";
         public string TargetHeight
         {
             get
